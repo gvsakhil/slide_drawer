@@ -108,7 +108,7 @@ class MenuItemWidget extends StatelessWidget {
 
   Widget? get _leading {
     if (item.hasLeading) return item.leading!;
-    if (item.hasIcon) return Icon(item.icon);
+    if (item.hasIcon) return Icon(item.icon, size: 30);
     return null;
   }
 
@@ -117,7 +117,7 @@ class MenuItemWidget extends StatelessWidget {
     return ListTile(
       leading: _leading,
       contentPadding: EdgeInsets.only(left: _leading == null ? 24 : 16),
-      title: Text(item.title),
+      title: Text(item.title, style: TextStyle(fontSize: 30)),
       onTap: () {
         if (item.isCloseDrawerWhenTapped) {
           SlideDrawer.of(context)?.close();
